@@ -1,0 +1,4 @@
+C:\ProgramData\Anaconda3\Library\bin\pyuic5 -o ui_wh.py wh.ui
+
+
+pyinstaller -w -i d13.ico whs.py
