@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
-import io
-import cx_Oracle
+import cStringIO
+#import cx_Oracle
 import datetime
 import pandas as pd
 import pymysql
@@ -81,7 +81,7 @@ class RPC2DB(DB):
         self.find_miss_date()
         for tdate in self.dtlist:
             print(tdate)
-            output = io.StringIO()
+            output = cStringIO.StringIO()
             try:
                 data = self.c.get_hq_by_dt(tdate)
             except Exception as _:
@@ -90,6 +90,7 @@ class RPC2DB(DB):
                 df = pd.read_json(data)
                 df.reset_index(inplace=True)
                 df = df[usecols]
+                df = df.round(2)
                 df.to_csv(output, sep='\t', index=False, header=False)
                 output.getvalue()
                 output.seek(0)
