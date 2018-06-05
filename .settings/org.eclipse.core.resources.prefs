@@ -6,4 +6,5 @@ encoding//src/pure_data_xsd.py=utf-8
 encoding//src/stock_match.py=utf-8
 encoding//src/xsalg.py=utf-8
 encoding//src/xsd.py=utf-8
+encoding//src/zerorpc_wide_base_client.py=utf-8
 encoding//workhour/whs.py=utf-8
